@@ -27,3 +27,24 @@ close $fileId
 set fileId [open "./tmp/output.tcl" "w"]
 puts $fileId "Hello World!"
 close $fileId
+
+puts "***************************************************************************"
+if {[file exists "./tmp/output.tcl"]} {
+    set size [file size "./tmp/output.tcl"]
+    puts "File exists: $size bytes"
+} else {
+    puts "File does not exist!"
+}
+
+
+if {[file exists "./tmp/test"]} {
+    puts "File exists"
+    file delete "./tmp/test"
+}
+
+if {[file exists "./tmp/test"]} {
+} else {
+    puts "File does not exist!"
+    set fileId [open "./tmp/test" "w"]
+    close $fileId
+}
