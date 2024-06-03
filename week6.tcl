@@ -5,8 +5,12 @@ proc divide {a b} {
     return [expr {$a / $b}]
 }
 
-set a [divide 3 1]
-puts $a
+if {[catch {divide 3 0} result option]} {
+    puts "Error occured: $result"
+    puts "Options: $option"
+} else {
+
+}
 
 puts "********************************************************************************"
 proc exampleProc {} {
@@ -20,3 +24,8 @@ if {[catch {exampleProc} result]} {
 } else {
     puts "Result: $result"
 }
+
+puts "********************************debug hint**************************************"
+# puts
+# info
+# trace
