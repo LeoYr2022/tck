@@ -15,3 +15,20 @@ puts "The length of the list is $len"
 
 lappend myList waterm a1 a3 a5
 puts $myList
+
+# Array
+## array set
+## array get
+## array name
+set myArray(name) "John"
+set myArray(age) 30
+puts $myArray(name)  ;# 输出：John
+puts $myArray(age)   ;# 输出：30
+
+foreach {key vaule} [array get myArray] {
+   puts "$key: $vaule" 
+}
+
+foreach {key} [array name myArray] {
+   puts "arrayName: $key" 
+}
