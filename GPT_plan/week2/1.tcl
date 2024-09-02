@@ -32,3 +32,10 @@ foreach {key vaule} [array get myArray] {
 foreach {key} [array name myArray] {
    puts "arrayName: $key" 
 }
+
+
+set myString "Learning TCL is fun!"
+puts "String length: [string length $myString]"
+puts "Uppercase: [string toupper $myString]"
+puts "Lowercase: [string tolower $myString]"
+
