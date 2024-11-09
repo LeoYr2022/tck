@@ -1,4 +1,4 @@
-#!usr/bin/tclsh
+#!/opt/conda/bin/tclsh
 
 set a "hello Tcl world !"
 set b ""
