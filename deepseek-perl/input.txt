@@ -1,0 +1,56 @@
+my $text = "The quick brown fox jumps over the lazy dog";
+
+if ($text =~ /fox/) {
+    print "Found 'fox'\n";
+}
+
+# 匹配位置
+my $pos = index($text, "brown");
+print "Position of 'brown': $pos\n";
+
+## my $char = substr($text, $pos,length("brown"));
+my $char = substr($text, $pos);
+print "Character at position $pos: $char\n";    my $text = "The quick brown fox jumps over the lazy dog";
+
+# 元字符
+if ($text =~ /^The/) {       # ^ 开头
+    print "Starts with 'The'\n";
+}
+
+if ($text =~ /dog$/) {       # $ 结尾
+    print "Ends with 'dog'\n";
+}
+
+# 量词
+if ("aaabbb" =~ /a{2,4}/) {  # 2到4个a
+    print "Found 2-4 a's\n";
+}my $date = "2023-04-15";
+if ($date =~ /(\d{4})-(\d{2})-(\d{2})/) {
+    print "Year: $1, Month: $2, Day: $3\n";
+}
+
+# 反向引用
+if ("abab" =~ /(..)\1/) {
+    print "Found repeated group: $1\n";
+}my $text = "I like cats";
+$text =~ s/cats/dogs/;  # 替换
+print "$text\n";        # I like dogs
+
+# 全局替换
+my $text2 = "foo Foo bar";
+$text2 =~ s/foo/bar/gi; # g=global i=ignore sensitive case    
+print "$text2\n";       # bar bar bar# 修饰符
+my $text = "Hello\nWorld";
+if ($text =~ /hello/i) {  # i 忽略大小写
+    print "Found hello\n";
+}
+
+if ($text =~ /hello.world/si) { # s 让.匹配换行符
+    print "Found across lines\n";
+}
+
+# 预编译正则
+my $regex = qr/(\d{3})-(\d{4})/;
+if ("123-4567" =~ $regex) {
+    print "Matched pattern\n";
+}
