@@ -4,7 +4,7 @@ my ($lines, $words, $chars) = (0, 0, 0);
 # 打开文件
 open my $fh, '<', 'input.txt' or die "Cannot open input.txt: $!";
 while (<$fh>) {
-    chomp;  # 去除换行符
+    chomp;  # 去除换行符 equals chomp($_);
     $lines++;
     $chars += length($_);
     $words += scalar(split);
