@@ -12,6 +12,7 @@ while (my $line = <STDIN>) {
         print "$key => $value\n";
     }
 }
+print "Line is: $line\n";   # $line is a local variable 
 
 # 排序输出
 #    $b <=> $a  # 降序  
