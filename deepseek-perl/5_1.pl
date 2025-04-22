@@ -29,6 +29,10 @@ print "=== Error Summary ===\n";
 for my $status (sort keys %error_counts) {
     print "Status $status: $error_counts{$status} occurrences\n";
 }
+print "\n";
+for my $status (sort {$error_counts{$b} <=> $error_counts{$a}} keys %error_counts) {
+    print "Status $status: $error_counts{$status} occurrences\n";
+}
 
 print "\n=== Top IPs ===\n";
 for my $ip (sort { $ip_counts{$b} <=> $ip_counts{$a} } keys %ip_counts) {
