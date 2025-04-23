@@ -1,0 +1,2 @@
+Perl is a powerful text processing language.
+It is widely used for text manipulation and data extraction.

@@ -15,8 +15,10 @@ my $t = Text::ASCIITable->new({ headingText => 'Sales Report' });
 $t->setCols('Name', 'Region', 'Sales', 'Commission');
 
 for my $row (@data) {
-    my $commission = sprintf "%.2f", $row->{sales} * 0.1;
+    my $commission = sprintf "%.3f", $row->{sales} * 0.1;
     $t->addRow($row->{name}, $row->{region}, $row->{sales}, $commission);
+    print $t;
+    print "=============================================\n";
 }
 
 # 输出报表
