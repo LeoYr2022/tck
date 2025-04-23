@@ -29,7 +29,7 @@ print "=== Error Summary ===\n";
 for my $status (sort keys %error_counts) {
     print "Status $status: $error_counts{$status} occurrences\n";
 }
-print "\n";
+print "\n===\n";
 for my $status (sort {$error_counts{$b} <=> $error_counts{$a}} keys %error_counts) {
     print "Status $status: $error_counts{$status} occurrences\n";
 }
